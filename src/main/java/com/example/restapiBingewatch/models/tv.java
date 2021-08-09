@@ -12,9 +12,12 @@ public class tv {
     private String description;
     private String titlepic;
     private String youtube;
+    private String rating;
+    private float buyprice;
+    private float rentprice;
+    private String featured;
 
-
-    public tv(String id, String category, String title, String filetitle, String description, String titlepic, String youtube) {
+    public tv(String id, String category, String title, String filetitle, String description, String titlepic, String youtube, String rating, float buyprice, float rentprice, String featured) {
         this.id = id;
         this.category = category;
         this.title = title;
@@ -22,6 +25,10 @@ public class tv {
         this.description = description;
         this.titlepic = titlepic;
         this.youtube = youtube;
+        this.rating = rating;
+        this.buyprice = buyprice;
+        this.rentprice = rentprice;
+        this.featured = featured;
     }
 
     public String getId() {
@@ -78,5 +85,37 @@ public class tv {
 
     public void setYoutube(String youtube) {
         this.youtube = youtube;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public float getBuyprice() {
+        return buyprice;
+    }
+
+    public void setBuyprice(float buyprice) {
+        this.buyprice = buyprice;
+    }
+
+    public float getRentprice() {
+        return rentprice;
+    }
+
+    public void setRentprice(float rentprice) {
+        this.rentprice = rentprice;
+    }
+
+    public String getFeatured() {
+        return featured;
+    }
+
+    public void setFeatured(String featured) {
+        this.featured = featured;
     }
 }

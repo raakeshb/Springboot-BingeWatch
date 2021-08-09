@@ -5,7 +5,10 @@ import com.example.restapiBingewatch.models.movies;
 import com.example.restapiBingewatch.models.tv;
 import com.example.restapiBingewatch.models.tvrepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
+import org.springframework.data.mongodb.core.MongoTemplate;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,6 +18,9 @@ public class tvservice {
 
     @Autowired
     private tvrepo repo;
+
+    @Autowired
+    private MongoTemplate Mongos;
 
     public List<tv> gettv() {
         return repo.findAll();
@@ -56,5 +62,18 @@ public class tvservice {
 
     public void deletetv(String id) {
         repo.deleteById(id);
+    }
+
+    public List<tv> searchbytitle(String name, String key) {
+        String keyvalue = "";
+
+        if (key == "category" || key == "title" || key == "rating" || key == "featured") {
+            keyvalue = key;
+        }
+
+        Query query = new Query();
+        query.addCriteria(Criteria.where(key).regex(name));
+        List<tv> tv = Mongos.find(query, tv.class);
+        return tv;
     }
 }
