@@ -15,7 +15,7 @@ import javax.websocket.server.PathParam;
 import java.util.Collections;
 import java.util.List;
 
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin("https://bingewatch-ott.herokuapp.com/")
 @RestController
 
 public class MovieController {
