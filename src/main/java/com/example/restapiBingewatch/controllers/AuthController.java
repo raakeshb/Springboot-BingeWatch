@@ -27,11 +27,11 @@ public class AuthController {
         try {
 
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(usr.getUsername(),usr.getPassword()));
-            var response = new Customized("You Have Logged in",null);
+            Customized response = new Customized("You Have Logged in",null);
             return new ResponseEntity(response,HttpStatus.OK);
 
         } catch (BadCredentialsException e) {
-            var response = new Customized("Username or Password is Wrong",null);
+            Customized response = new Customized("Username or Password is Wrong",null);
             return new ResponseEntity(response, HttpStatus.UNAUTHORIZED);
         }
 
