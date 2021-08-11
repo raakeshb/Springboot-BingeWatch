@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
-@CrossOrigin("https://bingewatch-ott.herokuapp.com/")
+@CrossOrigin("*")
 @Controller
 public class LoginBannerController {
 
