@@ -13,7 +13,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
-@CrossOrigin("https://bingewatch-ott.herokuapp.com/")
+@CrossOrigin("*")
 @RestController
 public class AuthController {
 
